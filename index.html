@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>FoodBox</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com'" />
+    <link rel="preconnect" href="https://fonts.gstatic.com'" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background: #e5e5e5;
+        font-family: "Roboto";
+      }
+      .topo {
+        background: #cf2b2b;
+        color: white;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 0 #bbbbbb;
+      }
+      .produto {
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        box-shadow: 0 0 10px 0 #bbbbbb;
+        cursor: pointer;
+        border: 5px solid white;
+      }
+      h1 {
+        margin: 0;
+        font-family: "Righteous";
+        font-weight: 0;
+      }
+      h2 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: normal;
+      }
+      h3 {
+        font-size: 30px;
+        margin-bottom: 15px;
+        font-family: "Righteous";
+        font-weight: normal;
+      }
+      h4 {
+        margin-top: 0;
+        margin-bottom: 5px;
+        font-size: 20px;
+      }
+      img {
+        width: 130px;
+        border-radius: 5px;
+        float: right;
+        margin-left: 15px;
+      }
+      P {
+        margin: 15px 0 0 0;
+      }
+      .preco {
+        font-weight: bold;
+        font-size: 18px;
+      }
+      .botao {
+        background: #0b940b;
+        text-align: center;
+        padding: 15px;
+        margin-bottom: 30px;
+        margin-top: 100px;
+        border-radius: 55px;
+        font-family: "Righteous";
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="topo">
+      <h1>FoodBox</h1>
+      <h2>Monte seu box e receba em 15 minutos!</h2>
+    </div>
+    <h3>Primeiro, seu prato</h3>
+    <div id="lasanha" class="produto" onclick="escolherlasanha()">
+      <img src="imagens/lasanha.jpg" />
+      <h4>Lasanha</h4>
+      <p>carne moída, molho de tomate e queijo</p>
+      <p class="preco">R$12,90</p>
+    </div>
+
+    <div id="salada" class="produto" onclick="escolhersalada()">
+      <img src="imagens/salada.jpg" />
+      <h4>Salada</h4>
+      <p>
+        alface, alface roxa, tomate, cenoura, beterraba, alho poró, rabanete
+      </p>
+      <p class="preco">R$10,90</p>
+    </div>
+
+    <div id="risoto" class="produto" onclick="escolherrisoto()">
+      <img src="imagens/risoto.jpg" />
+      <h4>Risoto</h4>
+      <p>arroz arbóreo, cogumelo shitake, molho de tomate</p>
+      <p class="preco">R$15,90</p>
+    </div>
+
+    <h3>Agora, sua bebida</h3>
+    <div id="sucolaranja" class="produto" onclick="escolhersucolaranja()">
+      <img src="imagens/sucos.jpg" />
+      <h4>Suco de laranja</h4>
+      <p>da fruta</p>
+      <p class="preco">R$4,90</p>
+    </div>
+    <div id="sucodetox" class="produto" onclick="escolhersucodetox()">
+      <img src="imagens/sucos.jpg" />
+      <h4>Suco detox</h4>
+      <p>couve, limão, espinafre, pepino e água de coco</p>
+      <p class="preco">R$5,90</p>
+    </div>
+
+    <div id="sucoabacaxi" class="produto" onclick="escolhersucoabacaxi()">
+      <img src="imagens/sucos.jpg" />
+      <h4>Suco de abacaxi</h4>
+      <p>abacaxi, gengibre e hortelã</p>
+      <p class="preco">R$4,90</p>
+    </div>
+    <h3>E a sobremesa</h3>
+    <div id="tortamorango" class="produto" onclick="escolhertortamorango()">
+      <img src="imagens/tortademorango.jpg" />
+      <h4>Torta de morango</h4>
+      <p>
+        farinha, açúcar, ovos, leite, manteiga, morango e calda de morango
+      </p>
+      <p class="preco">R$10,90 a fatia</p>
+    </div>
+
+    <div id="tortalimao" class="produto" onclick="escolhertortalimao()">
+      <img src="imagens/tortadelimao.jpg" />
+      <h4>Tortinha de limão</h4>
+      <p>
+        farinha, açúcar, ovos, leite, manteiga, leite condensado e calda de
+        limão
+      </p>
+      <p class="preco">R$4,90</p>
+    </div>
+
+    <div class="botao" onclick="finalizarpedido()">
+      Finalizar pedido
+    </div>
+    <script>
+      let pratoprincipal;
+      let bebida;
+      let sobremesa;
+
+      function escolherlasanha() {
+        document.getElementById("lasanha").style.borderColor = "green";
+        document.getElementById("salada").style.borderColor = "white";
+        document.getElementById("risoto").style.borderColor = "white";
+        pratoprincipal = "lasanha";
+      }
+      function escolhersalada() {
+        document.getElementById("lasanha").style.borderColor = "white";
+        document.getElementById("salada").style.borderColor = "green";
+        document.getElementById("risoto").style.borderColor = "white";
+        pratoprincipal = "salada";
+      }
+      function escolherrisoto() {
+        document.getElementById("lasanha").style.borderColor = "white";
+        document.getElementById("salada").style.borderColor = "white";
+        document.getElementById("risoto").style.borderColor = "green";
+        pratoprincipal = "risoto";
+      }
+      function escolhersucolaranja() {
+        document.getElementById("sucolaranja").style.borderColor = "green";
+        document.getElementById("sucodetox").style.borderColor = "white";
+        document.getElementById("sucoabacaxi").style.borderColor = "white";
+        bebida = "suco de laranja";
+      }
+      function escolhersucodetox() {
+        document.getElementById("sucolaranja").style.borderColor = "white";
+        document.getElementById("sucodetox").style.borderColor = "green";
+        document.getElementById("sucoabacaxi").style.borderColor = "white";
+        bebida = "suco detox";
+      }
+      function escolhersucoabacaxi() {
+        document.getElementById("sucolaranja").style.borderColor = "white";
+        document.getElementById("sucodetox").style.borderColor = "white";
+        document.getElementById("sucoabacaxi").style.borderColor = "green";
+        bebida = "suco de acabaxi";
+      }
+      function escolhertortamorango() {
+        document.getElementById("tortamorango").style.borderColor = "green";
+        document.getElementById("tortalimao").style.borderColor = "white";
+        sobremesa = "torta de morango";
+      }
+      function escolhertortalimao() {
+        document.getElementById("tortamorango").style.borderColor = "white";
+        document.getElementById("tortalimao").style.borderColor = "green";
+        sobremesa = "torta de limão";
+      }
+      function finalizarpedido() {
+        //alert(pratoprincipal + ", " + bebida + " e " + sobremesa);
+        alert (pratoprincipal);
+        alert (bebida);
+        alert (sobremesa);
+
+      }
+    </script>
+  </body>
+</html>
