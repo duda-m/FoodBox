@@ -204,11 +204,20 @@
         sobremesa = "torta de limão";
       }
       function finalizarpedido() {
-        //alert(pratoprincipal + ", " + bebida + " e " + sobremesa);
-        alert (pratoprincipal);
+        /* alert (pratoprincipal);
         alert (bebida);
         alert (sobremesa);
+      */
+        let mensagem;
+        mensagem =
+          "Olá, gostaria de pedir: " +
+          pratoprincipal +
+          ", " +
+          bebida +
+          " e " +
+          sobremesa;
 
+        window.open("https://wa.me/+5521999999999?text=" + mensagem);
       }
     </script>
   </body>
